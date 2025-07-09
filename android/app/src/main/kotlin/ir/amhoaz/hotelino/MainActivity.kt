@@ -1,4 +1,4 @@
-package com.example.hotelino
+package ir.amhoaz.hotelino
 
 import io.flutter.embedding.android.FlutterActivity
 
