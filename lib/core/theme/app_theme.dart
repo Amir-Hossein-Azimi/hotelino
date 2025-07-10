@@ -86,7 +86,7 @@ class AppTheme {
     final baseDark = ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark, //show this is light
-      fontFamily: 'sahel' ,  //show light theme font
+      fontFamily: 'sahel' ,  //show dark theme font
       colorSchemeSeed: AppColors.primary, //from constants
       appBarTheme: const AppBarTheme( // for app bar
         elevation: 0,
