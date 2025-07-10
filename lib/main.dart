@@ -1,3 +1,4 @@
+import 'package:Hotelino/core/theme/app_theme.dart';
 import 'package:Hotelino/core/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,22 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+
+    return Consumer<ThemeProvider>(
+      builder:(context, themeModeProvider, child) {
+        return MaterialApp(
+          theme: themeModeProvider.brightness == Brightness.light ? AppTheme.lightTheme : AppTheme.darkTheme,
+        home: Scaffold(
+          appBar: AppBar(),
+          body: Center(
+            child: ElevatedButton(onPressed: () {themeModeProvider.toggleTheme();} , 
+            child: Text("change theme")),
+          ),
+        ),
+      );
+      },
+    );
+  }
 }
 
