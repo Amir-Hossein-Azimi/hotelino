@@ -18,8 +18,42 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver { // widgetbinding is mixin and allow me to add sth
+  
+  //for listen os and if dark , program to dark 
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+  }
+
+
+  @override
+  void didChangePlatformBrightness() {
+    super.didChangePlatformBrightness();
+
+    final brightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
+    Provider.of<ThemeProvider>(context , listen: false).updateBrightness(brightness);
+  }
+
+
+
+
+
 
   // This widget is the root of your application.
   @override
