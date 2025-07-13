@@ -1,6 +1,8 @@
 import 'package:Hotelino/bootstrap.dart';
 import 'package:Hotelino/core/theme/app_theme.dart';
 import 'package:Hotelino/core/theme/theme_provider.dart';
+import 'package:Hotelino/features/onboarding/data/repositories/onboarding_repository.dart';
+import 'package:Hotelino/features/onboarding/presentation/onboarding_provider.dart';
 import 'package:Hotelino/routes/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +21,8 @@ void main() async {
 
   runApp(
     MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => ThemeProvider(WidgetsBinding.instance.platformDispatcher.platformBrightness))//get uI Theme now dark or white
+      ChangeNotifierProvider(create: (_) => ThemeProvider(WidgetsBinding.instance.platformDispatcher.platformBrightness)),//get uI Theme now dark or white
+      ChangeNotifierProvider(create: (_) => OnboardingProvider(OnboardingRepository()))//onboarding page
     ],
     child: const MyApp(),
     )
@@ -67,6 +70,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver { // widgetbi
       builder:(context, themeModeProvider, child) {
         return MaterialApp(
           title: "Hotelino",
+          debugShowCheckedModeBanner: false,
           theme: themeModeProvider.brightness == Brightness.light ? AppTheme.lightTheme : AppTheme.darkTheme,
           routes: AppRoute.routes,
           initialRoute: AppRoute.onboarding,

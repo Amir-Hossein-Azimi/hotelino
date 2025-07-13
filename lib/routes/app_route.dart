@@ -1,5 +1,5 @@
 import 'package:Hotelino/features/home/HomePage.dart';
-import 'package:Hotelino/features/onboarding/OnboardingPage.dart';
+import 'package:Hotelino/features/onboarding/presentation/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
 class AppRoute {
