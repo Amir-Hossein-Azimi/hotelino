@@ -37,13 +37,33 @@ class _OnboardingPageState extends State<OnboardingPage> {
               },
             
             ),
-          )
+          ),
+          const SizedBox(height: 20,),
+          buildPageIndicator(onboardingProvider.currentPage, totalPage, context),
+          const SizedBox(height: 20,)
+
         ],
       ),
 
     );
+  }
+  Widget buildPageIndicator(int currentIndex , int totalPage , BuildContext context ) {
+    final theme = Theme.of(context);
 
-
-
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: 
+        List.generate(totalPage, (index) => AnimatedContainer(duration: Duration(microseconds: 300),
+        margin: EdgeInsets.symmetric(horizontal: 5),
+        width: currentIndex == index ? 12 :8,
+        height: currentIndex == index ? 12 : 8,
+        decoration: BoxDecoration(
+          color: currentIndex == index
+          ? theme.colorScheme.primary
+          : theme.colorScheme.primary.withValues(alpha: 0.3)
+        ),
+        )
+        ,)
+    );
   }
 }
