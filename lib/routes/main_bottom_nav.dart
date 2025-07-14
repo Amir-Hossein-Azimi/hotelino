@@ -18,7 +18,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
   @override
   void initState() {
     super.initState();
-    _controller = PersistentTabController(initialIndex: 0);
+    _controller = PersistentTabController(initialIndex: 0);//0 ==> Home
   }
 
   _buildScreens() {
