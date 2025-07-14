@@ -1,4 +1,5 @@
 import 'package:Hotelino/bootstrap.dart';
+import 'package:Hotelino/bottom_navigation.dart';
 import 'package:Hotelino/core/theme/app_theme.dart';
 import 'package:Hotelino/core/theme/theme_provider.dart';
 import 'package:Hotelino/features/onboarding/data/repositories/onboarding_repository.dart';
@@ -68,6 +69,10 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver { // widgetbi
 
     return Consumer<ThemeProvider>(
       builder:(context, themeModeProvider, child) {
+        return MaterialApp(
+          theme: ThemeData(colorSchemeSeed: Colors.deepPurpleAccent),
+          home: BottomNavigation(),
+        );
         return MaterialApp(
           title: "Hotelino",
           debugShowCheckedModeBanner: false,
