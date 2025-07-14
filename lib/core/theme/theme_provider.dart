@@ -4,7 +4,9 @@ import 'package:flutter/services.dart';
 
 class ThemeProvider extends ChangeNotifier {
   Brightness _brightness;
-  ThemeProvider(this._brightness);
+  ThemeProvider(this._brightness){
+    _updateSystemUI();
+  }
 
   Brightness get brightness => _brightness;
 
