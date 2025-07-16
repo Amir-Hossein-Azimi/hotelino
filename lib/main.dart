@@ -1,9 +1,12 @@
 import 'package:Hotelino/bootstrap.dart';
 import 'package:Hotelino/core/theme/app_theme.dart';
 import 'package:Hotelino/core/theme/theme_provider.dart';
+import 'package:Hotelino/features/home/data/repositories/hotel_repository.dart';
+import 'package:Hotelino/features/home/presentation/provider/home_provider.dart';
 import 'package:Hotelino/features/onboarding/data/repositories/onboarding_repository.dart';
 import 'package:Hotelino/features/onboarding/presentation/onboarding_provider.dart';
 import 'package:Hotelino/routes/app_route.dart';
+import 'package:Hotelino/shared/services/json_data_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -18,11 +21,14 @@ void main() async {
   await lazyBootstrap();
   FlutterNativeSplash.remove();
 
+  final hotelRepository = HotelRepository(jsonDataService: JsonDataService());
+
 
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => ThemeProvider(WidgetsBinding.instance.platformDispatcher.platformBrightness)),//get uI Theme now dark or white
-      ChangeNotifierProvider(create: (_) => OnboardingProvider(OnboardingRepository()))//onboarding page
+      ChangeNotifierProvider(create: (_) => OnboardingProvider(OnboardingRepository())),//onboarding page
+      ChangeNotifierProvider(create: (_) => HomeProvider(hotelRepository))
     ],
     child: const MyApp(),
     )
