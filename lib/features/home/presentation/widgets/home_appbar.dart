@@ -30,6 +30,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                       return profileProvider.profile?.notifications != null &&
                               profileProvider.profile!.notifications > 0
                           ? Positioned(
+                            right: 12,
+                            top: 14,
                               child: CircleAvatar(
                                 radius: 4,
                                 backgroundColor: Theme.of(
@@ -43,7 +45,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ],
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {themeProvider.toggleTheme();},
                 icon: Icon(
                   themeProvider.brightness == Brightness.light
                       ? Icons.dark_mode
@@ -62,7 +64,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   CircleAvatar(
                     radius: 20,
                     backgroundImage: NetworkImage(
-                      ProfileProvider.profile?.avatarUrl ?? "https://xsgames.co/randomusers/assets/avatars/male/27.jpg",
+                      ProfileProvider.profile?.avatarUrl ?? "https://picsum.photos/200/300",
                     ),
                   ),
                 ],

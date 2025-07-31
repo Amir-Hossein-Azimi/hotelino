@@ -14,27 +14,34 @@ import 'package:provider/provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
-
   //for trust compiled ui for multiprovider
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  //config , and ... when in splash screen 
+  //config , and ... when in splash screen
   await lazyBootstrap();
   FlutterNativeSplash.remove();
 
   final hotelRepository = HotelRepository(jsonDataService: JsonDataService());
 
-
   runApp(
-    MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => ThemeProvider(WidgetsBinding.instance.platformDispatcher.platformBrightness)),//get uI Theme now dark or white
-      ChangeNotifierProvider(create: (_) => OnboardingProvider(OnboardingRepository())),//onboarding page
-      ChangeNotifierProvider(create: (_) => HomeProvider(hotelRepository)),
-      ChangeNotifierProvider(create: (_) => ProfileProvider(ProfileRepository(),hotelRepository))
-    ],
-    child: const MyApp(),
-    )
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ThemeProvider(
+            WidgetsBinding.instance.platformDispatcher.platformBrightness,
+          ),
+        ), //get uI Theme now dark or white
+        ChangeNotifierProvider(
+          create: (_) => OnboardingProvider(OnboardingRepository()),
+        ), //onboarding page
+        ChangeNotifierProvider(create: (_) => HomeProvider(hotelRepository)),
+        ChangeNotifierProvider(
+          create: (_) => ProfileProvider(ProfileRepository(), hotelRepository),
+        ),
+      ],
+      child: const MyApp(),
+    ),
   );
 }
 
@@ -45,9 +52,10 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver { // widgetbinding is mixin and allow me to add sth
-  
-  //for listen os and if dark , program to dark 
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  // widgetbinding is mixin and allow me to add sth
+
+  //for listen os and if dark , program to dark
 
   @override
   void initState() {
@@ -61,31 +69,33 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver { // widgetbi
     WidgetsBinding.instance.removeObserver(this);
   }
 
-
   @override
   void didChangePlatformBrightness() {
     super.didChangePlatformBrightness();
 
-    final brightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
-    Provider.of<ThemeProvider>(context , listen: false).updateBrightness(brightness);
+    final brightness =
+        WidgetsBinding.instance.platformDispatcher.platformBrightness;
+    Provider.of<ThemeProvider>(
+      context,
+      listen: false,
+    ).updateBrightness(brightness);
   }
-
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return Consumer<ThemeProvider>(
-      builder:(context, themeModeProvider, child) {
+      builder: (context, themeModeProvider, child) {
         return MaterialApp(
           title: "Hotelino",
           debugShowCheckedModeBanner: false,
-          theme: themeModeProvider.brightness == Brightness.light ? AppTheme.lightTheme : AppTheme.darkTheme,
+          theme: themeModeProvider.brightness == Brightness.light
+              ? AppTheme.lightTheme
+              : AppTheme.darkTheme,
           routes: AppRoute.routes,
           initialRoute: AppRoute.onboarding,
-      );
+        );
       },
     );
   }
 }
-
