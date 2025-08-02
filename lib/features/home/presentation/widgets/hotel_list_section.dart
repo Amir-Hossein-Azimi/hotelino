@@ -1,10 +1,49 @@
+import 'package:Hotelino/features/home/data/models/hotel.dart';
 import 'package:flutter/material.dart';
 
 class HotelListSection extends StatelessWidget {
-  const HotelListSection({super.key});
+  final String title;
+  final List<Hotel> hotels;
+  final VoidCallback? onSeeAllPressed;
+
+  const HotelListSection({
+    super.key,
+    required this.title,
+    required this.hotels,
+    this.onSeeAllPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "مشاهده همه",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+              ),
+              Text(title, style: Theme.of(context).textTheme.displayMedium),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 360,
+          child: ListView.builder(
+            itemCount: hotels.length,
+            itemBuilder: (context, index) {},
+          ),
+        ),
+      ],
+    );
   }
 }
