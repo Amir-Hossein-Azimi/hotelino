@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AppConstants {
-  static const String baseUrlImage = "https://dunijet.ir/content/projects/hotelino";
+  static const String baseUrlImage = "https://dunijet.ir/content/projects/hotelino/";
   static const String hotelsData = "assets/data/hotels.json";
 }
 

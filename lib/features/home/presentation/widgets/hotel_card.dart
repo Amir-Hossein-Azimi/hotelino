@@ -1,3 +1,4 @@
+import 'package:Hotelino/core/utils/network.dart';
 import 'package:Hotelino/core/utils/price_formatter.dart';
 import 'package:Hotelino/features/home/data/models/hotel.dart';
 import 'package:Hotelino/features/home/presentation/provider/favorite_item_provider.dart';
@@ -20,7 +21,21 @@ class HotelCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Stack(children: []),
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
+                  child: Image.network(
+                    networkUrl(hotel.images[0]),
+                    height: 200,
+                    width: double.infinity,
+                  ),
+                ),
+              ],
+            ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -76,12 +91,12 @@ class HotelCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Padding(
-                    padding: const EdgeInsets.only(right: 8 , left: 8),
+                    padding: const EdgeInsets.only(right: 8, left: 8),
                     child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {},
-                    
+
                         child: const Text(
                           "مشاهده و انتخاب اتاق",
                           style: TextStyle(color: Colors.white),
@@ -89,7 +104,7 @@ class HotelCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 8,),
+                  const SizedBox(height: 8),
                 ],
               ),
             ),
