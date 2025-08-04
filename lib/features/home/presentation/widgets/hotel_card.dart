@@ -2,6 +2,7 @@ import 'package:Hotelino/core/utils/network.dart';
 import 'package:Hotelino/core/utils/price_formatter.dart';
 import 'package:Hotelino/features/home/data/models/hotel.dart';
 import 'package:Hotelino/features/home/presentation/provider/favorite_item_provider.dart';
+import 'package:Hotelino/features/home/presentation/widgets/animated_favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,6 +36,13 @@ class HotelCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: AnimatedFavoriteButton(isFavorite: isFavorite, onTap: () {
+                    favoriteProvider.toggleFavorite(hotel.id);
+                  },),
+                 ),
               ],
             ),
             Expanded(
