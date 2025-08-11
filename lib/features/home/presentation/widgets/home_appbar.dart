@@ -58,7 +58,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             builder: (context, ProfileProvider, child) {
               return Row(
                 children: [
-                  Text(ProfileProvider.profile?.name ?? "کاربر", style: Theme.of(context).textTheme.titleMedium),
+                  Text("${ProfileProvider.profile?.name} " ?? " کاربر", style: Theme.of(context).textTheme.titleMedium),
                   const SizedBox(height: 8),
                   CircleAvatar(
                     radius: 20,

@@ -30,6 +30,7 @@ class HotelVerticalList extends StatelessWidget {
           shrinkWrap: true,
           //becaus we have a scroll for app and we had conflict
           physics: const NeverScrollableScrollPhysics(),
+          itemCount: hotels.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsetsGeometry.symmetric(
