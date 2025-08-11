@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:Hotelino/core/utils/network.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:Hotelino/core/utils/network.dart';
 
 class StoryCarousel extends StatefulWidget {
   final List<String> images;
