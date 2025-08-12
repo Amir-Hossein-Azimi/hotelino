@@ -1,4 +1,4 @@
-import 'package:Hotelino/features/home/HomePage.dart';
+import 'package:Hotelino/features/home/presentation/HomePage.dart';
 import 'package:Hotelino/features/onboarding/presentation/onboarding_page.dart';
 import 'package:Hotelino/routes/main_bottom_nav.dart';
 import 'package:flutter/material.dart';

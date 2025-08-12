@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
               builder: (context, homeProvider, child) {
                 return HotelListSection(
                   title: "پیشنهاد ویژه امروز",
-                  hotels: homeProvider.getPopularHotels(),
+                  hotels: homeProvider.getSpecialOffersHotels(),
                   onSeeAllPressed: () {},
                 );
               },
