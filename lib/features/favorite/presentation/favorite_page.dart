@@ -1,5 +1,8 @@
+import 'package:Hotelino/features/favorite/presentation/widget/favorite_item.dart';
+import 'package:Hotelino/features/home/presentation/provider/favorite_item_provider.dart';
 import 'package:Hotelino/features/home/presentation/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -14,13 +17,31 @@ class FavoritePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            SizedBox(height: 16,),
-            SearchBarWidget(),
-            SizedBox(height: 16,),
+            const SizedBox(height: 16,),
+            const SearchBarWidget(),
+            const SizedBox(height: 16,),
+            Consumer<FavoriteItemProvider>(
+                    builder: (context, favoriteProvider, child) {
+                      return  ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: favoriteProvider.favoriteHotelList.length,
+                        itemBuilder: (context, index) {
+                          return Padding(padding: const EdgeInsets.symmetric(horizontal: 16 , vertical: 6),
+                          child: FavoriteHotelCard(hotel: favoriteProvider.favoriteHotelList[index], onRemoveFavotiteClicked: (hotelId) {
+                            favoriteProvider.toggleFavorite(hotelId);
+                          },),
+                          
+                          );
+                          
+                        },
+                      );
+                    },
+                  ),
           ],
         ),
       ),
