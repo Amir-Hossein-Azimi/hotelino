@@ -1,4 +1,5 @@
 import 'package:Hotelino/core/constants/constants.dart';
+import 'package:Hotelino/features/booking/presentation/booking_page.dart';
 import 'package:Hotelino/features/favorite/presentation/favorite_page.dart';
 import 'package:Hotelino/features/home/presentation/HomePage.dart';
 import 'package:Hotelino/routes/test.dart';
