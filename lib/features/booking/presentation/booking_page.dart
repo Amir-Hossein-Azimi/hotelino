@@ -29,10 +29,17 @@ class _BookingPageState extends State<BookingPage> {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
-      body: Padding(padding: const EdgeInsets.all(16)
+      body: Padding(padding: const EdgeInsets.all(16),
        child: SingleChildScrollView(
         child: Consumer<BookingProvider>(builder: (context, value, child) {
-          
+          return Form(
+            key: _formKey,
+            child : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [],
+            )
+            
+             );
         },),
        ),
       
