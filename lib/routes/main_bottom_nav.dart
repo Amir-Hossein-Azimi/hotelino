@@ -1,4 +1,5 @@
 import 'package:Hotelino/core/constants/constants.dart';
+import 'package:Hotelino/core/utils/keyboard.dart';
 import 'package:Hotelino/features/booking/presentation/booking_page.dart';
 import 'package:Hotelino/features/favorite/presentation/favorite_page.dart';
 import 'package:Hotelino/features/home/presentation/HomePage.dart';
@@ -37,6 +38,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
           height: 20,
           colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
         ),
+        
         activeColorPrimary: AppColors.primary,
         inactiveIcon: SvgPicture.asset(
           "assets/images/nav_home.svg",
@@ -100,6 +102,14 @@ class _MainBottomNavState extends State<MainBottomNav> {
       controller: _controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
+      onItemSelected: (index) {
+        if (index != 2) {
+          //reset form on booking Page(use Global Key)
+          BookingPage.bookingPageKey.currentState?.resetForm();
+          
+        }
+        unfocusEditors(context);
+      },
       backgroundColor: Theme.of(context).colorScheme.surface,
       navBarStyle: NavBarStyle.style7,
       hideNavigationBarWhenKeyboardAppears: true,

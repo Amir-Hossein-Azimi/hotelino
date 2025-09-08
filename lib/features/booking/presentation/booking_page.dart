@@ -6,13 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class BookingPage extends StatefulWidget {
-  const BookingPage({super.key});
+  static GlobalKey<BookingPageState> bookingPageKey = GlobalKey<BookingPageState>();
+
+   BookingPage({super.key});
 
   @override
-  State<BookingPage> createState() => _BookingPageState();
+  State<BookingPage> createState() => BookingPageState();
 }
 
-class _BookingPageState extends State<BookingPage> {
+class BookingPageState extends State<BookingPage> {
   final _formKey = GlobalKey<FormState>();
 
   void resetForm() {
