@@ -65,33 +65,43 @@ class _TermsWidgetState extends State<TermsWidget> {
                     ),
                   ),
                 ),
-                Checkbox(
-                  value: isChecked,
-                  onChanged: (value) {
-                    setState(() {
-                      isChecked = value ?? false;
-                    });
-                  },
-                  shape: RoundedRectangleBorder(
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Checkbox(
+                    value: isChecked,
                     side: BorderSide(
                       //when had error color border side
                       color: field.hasError
                           ? Theme.of(field.context).colorScheme.error
                           : Theme.of(field.context).colorScheme.primary,
+                      width: field.hasError ? 1 : 1.5,
                     ),
-                    borderRadius: BorderRadius.circular(4),
+                    onChanged: (value) {
+                      setState(() {
+                        isChecked = value ?? false;
+                      });
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    activeColor: Theme.of(context).colorScheme.primary,
+                    visualDensity: const VisualDensity(
+                      horizontal: -4,
+                      vertical: -4,
+                    ),
                   ),
-                  activeColor: Theme.of(context).colorScheme.primary,
-                  visualDensity: const VisualDensity(horizontal: -4),
                 ),
               ],
             ),
-            if (field.hasError) 
+            if (field.hasError)
               Padding(
-                padding: const EdgeInsets.only(top: 8, right: 12),
+                padding: const EdgeInsets.only(right: 12),
                 child: Text(
                   field.errorText ?? '',
-                  style: TextStyle(color: Theme.of(context).colorScheme.error, fontSize: 12),
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
+                    fontSize: 12,
+                  ),
                 ),
               ),
           ],
