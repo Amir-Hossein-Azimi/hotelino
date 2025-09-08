@@ -21,12 +21,18 @@ class TermsWidget extends StatefulWidget {
 }
 
 class _TermsWidgetState extends State<TermsWidget> {
-  bool isChecked = false;
+  late bool isChecked;
 
   resetCheckbox() {
     setState(() {
       isChecked = false;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    isChecked = widget.initialValue;
   }
 
   @override
@@ -37,6 +43,16 @@ class _TermsWidgetState extends State<TermsWidget> {
       onSaved: widget.onSaved,
 
       builder: (FormFieldState<bool> field) {
+
+        //sync value ischecked 
+        if (field.value != isChecked) {
+          field.didChange(isChecked);
+        }
+
+
+
+
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -84,6 +100,7 @@ class _TermsWidgetState extends State<TermsWidget> {
                     onChanged: (value) {
                       setState(() {
                         isChecked = value ?? false;
+                        field.didChange(value);
                       });
                     },
                     shape: RoundedRectangleBorder(
