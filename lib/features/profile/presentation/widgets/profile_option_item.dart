@@ -16,12 +16,15 @@ class ProfileOptionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsGeometry.only(right: 8 , top: 8 , left: 8),
+      padding: const EdgeInsetsGeometry.only(right: 8, top: 8, left: 8),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
         child: Padding(
-          padding: const EdgeInsetsGeometry.symmetric(vertical: 6 , horizontal: 12),
+          padding: const EdgeInsetsGeometry.symmetric(
+            vertical: 6,
+            horizontal: 12,
+          ),
           child: Row(
             children: [
               const Icon(Icons.arrow_back_ios_new_rounded, size: 14),
@@ -36,10 +39,18 @@ class ProfileOptionItem extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF4EAE2),
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.darkFocusedBorder
+                      : const Color(0xFFF4EAE2),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(icon, color: AppColors.darkFocusedBorder, size: 20),
+                child: Icon(
+                  icon,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white
+                      : AppColors.darkFocusedBorder,
+                  size: 20,
+                ),
               ),
             ],
           ),
