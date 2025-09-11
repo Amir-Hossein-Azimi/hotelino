@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:Hotelino/features/home/presentation/provider/profile_provider.dart';
+import 'package:Hotelino/features/profile/presentation/widgets/profile_option_item.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,12 @@ class _ProfilePageState extends State<ProfilePage> {
         _image = File(picked.path);
       });
     }
+  }
+
+  void _showSnackbar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message, textDirection: TextDirection.rtl)),
+    );
   }
 
   @override
@@ -82,6 +89,41 @@ class _ProfilePageState extends State<ProfilePage> {
                     ).textTheme.headlineSmall!.copyWith(color: Colors.grey),
                   ),
                   const SizedBox(height: 24),
+                  ProfileOptionItem(
+                    title: "اطلاعات صفحه کاربری",
+                    icon: Icons.person_outline,
+                    onTap: () =>
+                        _showSnackbar(context, "مشاهده اطلاعات صفحه کاربری"),
+                  ),
+                  ProfileOptionItem(
+                    title: "اعلان ها",
+                    icon: Icons.notifications_outlined,
+                    onTap: () => _showSnackbar(context, "مشاهده اعلان‌ها"),
+                  ),
+                  ProfileOptionItem(
+                    title: "لیست مورد علاقه ها",
+                    icon: Icons.favorite_outline,
+                    onTap: () =>
+                        _showSnackbar(context, "مشاهده لیست علاقه‌مندی‌ها"),
+                  ),
+                  ProfileOptionItem(
+                    title: "فراموشی رمز عبور",
+                    icon: Icons.key_outlined,
+                    onTap: () =>
+                        _showSnackbar(context, "تغییر یا بازیابی رمز عبور"),
+                  ),
+                  ProfileOptionItem(
+                    title: "روش های پرداخت",
+                    icon: Icons.credit_card_outlined,
+                    onTap: () =>
+                        _showSnackbar(context, "مشاهده روش‌های پرداخت"),
+                  ),
+                  ProfileOptionItem(
+                    title: "تنظیمات",
+                    icon: Icons.settings_outlined,
+                    onTap: () =>
+                        _showSnackbar(context, "تنظیمات پروفایل کاربری"),
+                  ),
                 ],
               ),
             ),
