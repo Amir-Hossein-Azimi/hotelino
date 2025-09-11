@@ -29,7 +29,14 @@ class _ProfilePageState extends State<ProfilePage> {
 
   void _showSnackbar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message, textDirection: TextDirection.rtl)),
+      SnackBar(
+        content: Text(message, textDirection: TextDirection.rtl),
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 3),
+        elevation: 3,
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
     );
   }
 
