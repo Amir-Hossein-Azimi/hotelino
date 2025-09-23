@@ -43,7 +43,7 @@ class HotelDetailPage extends StatelessWidget {
               )
             ],
           ),
-        )
+        );
       },
     );
   }
