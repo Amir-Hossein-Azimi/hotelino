@@ -50,7 +50,10 @@ class HotelDetailPage extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 8 , vertical: 16),
+                  padding: const EdgeInsetsGeometry.symmetric(
+                    horizontal: 8,
+                    vertical: 16,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -59,7 +62,7 @@ class HotelDetailPage extends StatelessWidget {
                         style: textTheme.headlineMedium,
                         textDirection: TextDirection.rtl,
                       ),
-                      const SizedBox(height: 8,),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
                           Expanded(
@@ -67,14 +70,76 @@ class HotelDetailPage extends StatelessWidget {
                               hotel.address,
                               textAlign: TextAlign.right,
                               textDirection: TextDirection.rtl,
-                              style: const TextStyle(fontSize: 14 , color: Colors.grey),
-                            
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
                             ),
                           ),
-                          const SizedBox(width: 16,),
-                          const Icon(Icons.location_on_outlined , size: 18 , color: Colors.grey,)
+                          const SizedBox(width: 16),
+                          const Icon(
+                            Icons.location_on_outlined,
+                            size: 18,
+                            color: Colors.grey,
+                          ),
                         ],
-                      )
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        'امکانات رفاهی',
+                        style: textTheme.headlineSmall,
+                        textDirection: TextDirection.rtl,
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 14,
+                        children: hotel.amenities.map((a) {
+                          IconData icon;
+                          switch (a) {
+                            case ('ساحل'):
+                              icon = Icons.beach_access;
+                              break;
+                            case ('استخر'):
+                              icon = Icons.pool;
+                              break;
+                            case ('باشگاه'):
+                              icon = Icons.fitness_center;
+                              break;
+                            case ('کافه'):
+                              icon = Icons.restaurant;
+                              break;
+                            case ('رستوران'):
+                              icon = Icons.restaurant;
+                              break;
+                            case ('کولر'):
+                              icon = Icons.ac_unit;
+                              break;
+                            default:
+                              icon = Icons.check_circle_outline;
+                          }
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade200,
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Icon(icon, size: 30, color: Colors.grey),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                a,
+                                style: textTheme.bodySmall!.copyWith(
+                                  color: Colors.black87,
+                                ),
+                                textDirection: TextDirection.rtl,
+                              ),
+                            ],
+                          );
+                        }).toList(),
+                      ),
                     ],
                   ),
                 ),
