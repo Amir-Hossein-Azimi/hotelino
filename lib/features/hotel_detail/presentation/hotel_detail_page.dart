@@ -3,6 +3,7 @@ import 'package:Hotelino/features/home/data/models/hotel.dart';
 import 'package:Hotelino/features/home/data/repositories/hotel_repository.dart';
 import 'package:Hotelino/shared/services/json_data_service.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class HotelDetailPage extends StatelessWidget {
   final String hotelId;
@@ -31,16 +32,53 @@ class HotelDetailPage extends StatelessWidget {
                 pinned: false,
                 flexibleSpace: FlexibleSpaceBar(
                   background: GestureDetector(
-                    onLongPress: () {
-                      
-                    },
+                    onLongPress: () {},
                     child: Image.network(
                       fit: BoxFit.cover,
                       networkUrl(hotel.images.first),
                     ),
                   ),
                 ),
-              )
+                elevation: 8,
+                expandedHeight: 300,
+                leading: IconButton(
+                  onPressed: () {
+                    PersistentNavBarNavigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_back, color: Colors.white),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 8 , vertical: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        hotel.name,
+                        style: textTheme.headlineMedium,
+                        textDirection: TextDirection.rtl,
+                      ),
+                      const SizedBox(height: 8,),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              hotel.address,
+                              textAlign: TextAlign.right,
+                              textDirection: TextDirection.rtl,
+                              style: const TextStyle(fontSize: 14 , color: Colors.grey),
+                            
+                            ),
+                          ),
+                          const SizedBox(width: 16,),
+                          const Icon(Icons.location_on_outlined , size: 18 , color: Colors.grey,)
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         );
