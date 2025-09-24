@@ -21,7 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.notifications_none, color: Colors.grey),
+                    icon: const Icon(Icons.notifications_none, color: Colors.grey),
                   ),
 
                   Consumer<ProfileProvider>(
@@ -38,7 +38,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 ).colorScheme.primary,
                               ),
                             )
-                          : SizedBox();
+                          : const SizedBox();
                     },
                   ),
                 ],
