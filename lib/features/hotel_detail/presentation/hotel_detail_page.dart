@@ -1,6 +1,7 @@
 import 'package:Hotelino/core/utils/network.dart';
 import 'package:Hotelino/features/home/data/models/hotel.dart';
 import 'package:Hotelino/features/home/data/repositories/hotel_repository.dart';
+import 'package:Hotelino/features/hotel_detail/presentation/full_screen_image_shower.dart';
 import 'package:Hotelino/features/hotel_detail/presentation/full_screen_map_page.dart';
 import 'package:Hotelino/shared/services/json_data_service.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,17 @@ class HotelDetailPage extends StatelessWidget {
                 pinned: false,
                 flexibleSpace: FlexibleSpaceBar(
                   background: GestureDetector(
-                    onLongPress: () {},
+                    onLongPress: () {
+                      PersistentNavBarNavigator.pushNewScreen(
+                        context,
+                        screen: FullScreenImageShower(
+                          myImageUrl: hotel.images.first,
+                        ),
+                        withNavBar: false,
+                        pageTransitionAnimation:
+                            PageTransitionAnimation.cupertino,
+                      );
+                    },
                     child: Image.network(
                       fit: BoxFit.cover,
                       networkUrl(hotel.images.first),
@@ -160,7 +171,17 @@ class HotelDetailPage extends StatelessWidget {
                             return Row(
                               children: [
                                 GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    PersistentNavBarNavigator.pushNewScreen(
+                                      context,
+                                      screen: FullScreenImageShower(
+                                        myImageUrl: hotel.images[index],
+                                      ),
+                                      withNavBar: false,
+                                      pageTransitionAnimation:
+                                          PageTransitionAnimation.cupertino,
+                                    );
+                                  },
                                   child: ClipRRect(
                                     borderRadius: BorderRadiusGeometry.circular(
                                       12,
@@ -206,8 +227,9 @@ class HotelDetailPage extends StatelessWidget {
                                   longitude: hotel.location.longitude,
                                   hotelName: hotel.name,
                                 ),
-                                withNavBar: false ,
-                                pageTransitionAnimation: PageTransitionAnimation.cupertino
+                                withNavBar: false,
+                                pageTransitionAnimation:
+                                    PageTransitionAnimation.cupertino,
                               );
                             },
                             child: const Text(
