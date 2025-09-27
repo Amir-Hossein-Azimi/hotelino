@@ -26,6 +26,12 @@ To get a local copy up and running, follow these simple steps.
     flutter run
     ```
 
+## Benefits of Nix Flakes
+
+This project uses Nix Flakes to provide a fully reproducible development environment. The `flake.nix` file specifies the exact versions of all dependencies, including the Flutter SDK, build tools, and system libraries.
+
+You only need Nix installed on your system. By running `nix develop`, you will get a shell with everything needed to build and run the project. This ensures that the project works the same for every developer, eliminating "works on my machine" problems.
+
 ## Project Structure
 
 This project follows a feature-based architecture, which is a variation of Clean Architecture. The goal is to create a modular and scalable codebase.
