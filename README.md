@@ -83,3 +83,92 @@ This directory contains shared code that can be used across multiple features.
 
 *   **`services`**: Shared services like API calls, database, etc.
 *   **`widgets`**: Shared widgets that are used in multiple screens.
+---
+Hotelino Hotel Booking App (App Description)
+Hotelino is a comprehensive application for searching and booking hotels in Iran and around the world. With Hotelino, users can easily find the best and most economical accommodations with just a few clicks, ensuring a unique travel experience.
+
+This project is designed to simplify the hotel selection and booking process, featuring a modern user interface and a full range of functionalities.
+
+📸 Screenshots
+Here you can see various views of the application.
+
+(Place your screenshots in this section)
+
+Home Screen	Hotel Details	User Profile
+<img src="URL_FOR_SCREENSHOT_1" width="250">	<img src="URL_FOR_SCREENSHOT_2" width="250">	<img src="URL_FOR_SCREENSHOT_3" width="250">
+Search & Filter	Favorites Screen	Booking Form
+<img src="URL_FOR_SCREENSHOT_4" width="250">	<img src="URL_FOR_SCREENSHOT_5" width="250">	<img src="URL_FOR_SCREENSHOT_6" width="250">
+
+Export to Sheets
+✨ Key Features
+Based on the provided video showcase, the Hotelino app includes the following features:
+
+🏡 Extensive Hotel Search:
+
+Access to over 200 types of accommodations, including hotels, motels, rooms, suites, and more.
+
+Coverage of both domestic (e.g., Tehran, Mashhad) and international hotels (e.g., Istanbul, Brussels).
+
+🔎 Smart Filters:
+
+Ability to search and filter hotels based on various categories such as:
+
+Most Popular Hotels
+
+Special Offers
+
+Luxury Hotels
+
+Newest Hotels
+
+City Center Stays
+
+📄 Comprehensive Hotel Details Page:
+
+Displays complete information for each hotel, including:
+
+Name and exact address.
+
+High-quality image gallery.
+
+Amenities (e.g., pool, gym, air conditioning).
+
+Detailed descriptions of the hotel and its services.
+
+Location view on an interactive map.
+
+👤 Full-Fledged User Profile:
+
+View and edit user information.
+
+Access a list of Favorite Hotels.
+
+Manage notifications.
+
+Password recovery options.
+
+Payment settings.
+
+❤️ Favorites System:
+
+Users can add hotels to their favorites list for easy access later.
+
+📅 Simple Booking Process:
+
+A user-friendly booking form to enter details:
+
+Full Name.
+
+Destination.
+
+Check-in/Check-out Dates.
+
+Number of Guests.
+
+Contact number with international country code selection (e.g., Iran, France).
+
+🎨 Modern & Attractive UI:
+
+Beautiful design with smooth animations to enhance the user experience.
+
+Supports the operating system's native Dark Mode and Light Mode.
