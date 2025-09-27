@@ -28,9 +28,9 @@ To get a local copy up and running, follow these simple steps.
 
 ## Benefits of Nix Flakes
 
-This project uses Nix Flakes to provide a fully reproducible development environment. The `flake.nix` file specifies the exact versions of all dependencies, including the Flutter SDK, build tools, and system libraries.
+This project is built with Nix Flakes to ensure a fully reproducible development environment. The `flake.nix` file defines the project's entire environment, so you get the exact versions of all tools and dependencies just by running one command.
 
-You only need Nix installed on your system. By running `nix develop`, you will get a shell with everything needed to build and run the project. This ensures that the project works the same for every developer, eliminating "works on my machine" problems.
+This guarantees a consistent build process for every team member. The only manual step required is to download the Android SDK and configure the `ANDROID_SDK_ROOT` and `ANDROID_HOME` paths in the `flake.nix` file.
 
 ## Project Structure
 
