@@ -104,13 +104,12 @@ This project is designed to simplify the hotel selection and booking process, fe
 
 Here you can see various views of the application.
 
-*(Place your screenshots in this section)*
 
 | Home Screen | Hotel Details | User Profile |
 | :---: | :---: | :---: |
-| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Home.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Hotel_detail.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/profile.png?raw=true" width="250"\> |
+| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Home.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Hotel_detail.png?raw=true" width="250"\> | \<img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/Home.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/Hotel_detail.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/screenshot/profile.png" width="250"\> |
 | **Search & Filter** | **Favorites Screen** | **Booking Form** |
-| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/search.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/favorite.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/booking.png?raw=true" width="250"\> |
+| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/search.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/favorite.png?raw=true" width="250"\> | \<img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/search.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/favorite.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/screenshot/booking.png" width="250"\> |
 
 -----
 
