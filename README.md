@@ -1,7 +1,3 @@
-Of course\! Here is the complete README file with the descriptive part translated into English and added to the end of your original file.
-
------
-
 # Hotelino
 
 A simple hotel booking app built with Flutter, using Provider for state management.
@@ -107,9 +103,9 @@ Here you can see various views of the application.
 
 | Home Screen | Hotel Details | User Profile |
 | :---: | :---: | :---: |
-| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Home.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Hotel_detail.png?raw=true" width="250"\> | \<img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/Home.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/Hotel_detail.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/screenshot/profile.png" width="250"\> |
+| ![Home.png](screenshot/Home.png) | ![Hotel_detail.png](screenshot/Hotel_detail.png) | ![profile.png](screenshot/profile.png) 
 | **Search & Filter** | **Favorites Screen** | **Booking Form** |
-| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/search.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/favorite.png?raw=true" width="250"\> | \<img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/search.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/dev/screenshot/favorite.png" width="250"> | <img src="https://raw.githubusercontent.com/Amir-Hossein-Azimi/hotelino/screenshot/booking.png" width="250"\> |
+| ![search.png](screenshot/search.png) | ![favorite.png](screenshot/favorite.png) | ![booking.png](screenshot/booking.png) | 
 
 -----
 
@@ -122,14 +118,7 @@ Based on the provided video showcase, the Hotelino app includes the following fe
       * including hotels, motels, rooms, suites, and more.
       * Coverage of both domestic (e.g., Tehran, Mashhad) and international hotels (e.g., Istanbul, Brussels).
 
-  * **🔎 Smart Filters:**
-
-      * Ability to search and filter hotels based on various categories such as:
-          * **Most Popular Hotels**
-          * **Special Offers**
-          * **Luxury Hotels**
-          * **Newest Hotels**
-          * **City Center Stays**
+  * **🔎 Filters:**
 
   * **📄 Comprehensive Hotel Details Page:**
 
