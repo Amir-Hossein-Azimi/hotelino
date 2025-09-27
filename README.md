@@ -19,7 +19,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/your_username/hotelino.git
+    git clone https://github.com/Amir-Hossein-Azimi/hotelino.git
     ```
 2.  Install packages
     ```sh
@@ -108,9 +108,9 @@ Here you can see various views of the application.
 
 | Home Screen | Hotel Details | User Profile |
 | :---: | :---: | :---: |
-| \<img src="URL\_FOR\_SCREENSHOT\_1" width="250"\> | \<img src="URL\_FOR\_SCREENSHOT\_2" width="250"\> | \<img src="URL\_FOR\_SCREENSHOT\_3" width="250"\> |
+| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Home.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/Hotel_detail.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/profile.png?raw=true" width="250"\> |
 | **Search & Filter** | **Favorites Screen** | **Booking Form** |
-| \<img src="URL\_FOR\_SCREENSHOT\_4" width="250"\> | \<img src="URL\_FOR\_SCREENSHOT\_5" width="250"\> | \<img src="URL\_FOR\_SCREENSHOT\_6" width="250"\> |
+| \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/search.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/favorite.png?raw=true" width="250"\> | \<img src="https://github.com/Amir-Hossein-Azimi/hotelino/blob/dev/screenshot/booking.png?raw=true" width="250"\> |
 
 -----
 
@@ -120,7 +120,7 @@ Based on the provided video showcase, the Hotelino app includes the following fe
 
   * **🏡 Extensive Hotel Search:**
 
-      * Access to over 200 types of accommodations, including hotels, motels, rooms, suites, and more.
+      * including hotels, motels, rooms, suites, and more.
       * Coverage of both domestic (e.g., Tehran, Mashhad) and international hotels (e.g., Istanbul, Brussels).
 
   * **🔎 Smart Filters:**
