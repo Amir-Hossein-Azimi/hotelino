@@ -46,3 +46,13 @@ app.*.map.json
 
 /.direnv/
 **/IGNORE/
+
+# Keystore file
+*.jks
+
+# File containing Keystore properties
+key.properties
+
+# Nix/direnv generated files
+/result
+.direnv/
